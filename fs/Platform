@@ -1,0 +1,6 @@
+core-$(CONFIG_MIPS_HI2610E)	+= arch/mips/hi2610e/
+cflags-$(CONFIG_MIPS_HI2610E)	+= -I$(srctree)/arch/mips/include/asm/mach-hi2610e
+cflags-$(CONFIG_MIPS_HI2610E)	+= -I$(srctree)/arch/mips/hi2610e/driver
+load-$(CONFIG_MIPS_HI2610E)	+= 0xffffffff80010000
+
+# vim: set syntax=make :

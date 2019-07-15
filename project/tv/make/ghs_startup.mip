@@ -1,0 +1,383 @@
+/******************************************************************************************************************/
+#define SSNOP   sll zero,zero,1
+#define NOPS	SSNOP; SSNOP; SSNOP; SSNOP
+
+#define MTC0(src, dst)       \
+		nop;	     \
+	    mtc0 src,dst;\
+		NOPS
+
+#define MFC0(dst, src)       \
+	  	mfc0 dst,src;\
+		NOPS
+
+#define zero	     $0
+#define AT			 $1
+#define v0			 $2
+#define v1			 $3
+#define a0			 $4
+#define a1			 $5
+#define a2			 $6
+#define a3			 $7
+#define t0			 $8
+#define t1			 $9
+#define t2			$10
+#define t3			$11
+#define t4			$12
+#define t5			$13
+#define t6			$14
+#define t7			$15
+#define s0			$16
+#define s1			$17
+#define s2			$18
+#define s3			$19
+#define s4			$20
+#define s5			$21
+#define s6			$22
+#define s7			$23
+#define t8			$24
+#define t9			$25
+#define k0			$26
+#define k1			$27
+#define gp			$28
+#define sp			$29
+#define fp			$30
+#define ra			$31
+
+#define C0_Count		$9
+#define C0_Compare		$11
+#define C0_Status		$12
+#ifdef D_ARCH_HI2830 
+#define C0_CONFIG		$16
+#endif
+#define S_StatusFR		26			/* Enable 64-bit FPRs (MIPS64 only) (R/W) */
+#define M_StatusFR		(0x1 << S_StatusFR)
+#define S_StatusBEV		22			/* Enable Boot Exception Vectors (R/W) */
+#define M_StatusBEV		(0x1 << S_StatusBEV)
+#define C0_Cause		$13
+#define S_CauseIV		23
+#define M_CauseIV		(0x1 << S_CauseIV)
+#define S_CauseDC		27
+#define M_CauseDC		(0x1 << S_CauseDC)
+#ifdef D_ARCH_HI2830  
+#define C0_CONFIG_K0_NONCOHERENT	3
+#define C0_CONFIG_K0_SHF	0
+#endif
+/*****************************************************************************************************************/
+
+    .text
+    .globl _start
+	.ent _start
+_start:
+	.set noreorder
+
+#ifdef D_ARCH_HI2830  
+    /*下面注释掉的代码是一级CACHE的初始化代码，但在执行AUTOEXEC.BAT下载程序的时候，就已经把一级和二级CACHE打开了，所以此处注掉*/
+
+#if 1//
+
+//-------------------------------------------
+
+         /* Note the selected cache coherency attribute setting has influence
+
+          * on some of the tests
+
+         */
+
+         li       t0, (C0_CONFIG_K0_NONCOHERENT << C0_CONFIG_K0_SHF)
+
+ 
+
+         MTC0(       t0, C0_CONFIG )
+
+ 
+
+         /*  Initialise I cache (not done by testbench if CLEARCACHE == 0). 
+
+          *  Determine cache size using CONFIG1 register.
+
+          */
+
+         /* Determine size of I$ */
+
+ 
+
+         /*  
+
+          *  In case assembler does not recognize mf with select 
+
+         mfc0 t2, 16, 1
+
+          */
+
+         
+
+         .word 0x400a8001
+
+         
+
+         /* Isolate I$ Line Size */
+
+         sll     t3, t2, 10
+
+         srl     t3, 29
+
+ 
+
+         /* Skip ahead if No I$ */
+
+         beq  t3, zero, 10f
+
+         nop
+
+ 
+
+         li       t6, 2
+
+         sllv   t3, t6, t3     /* Now have true I$ line size in bytes */
+
+ 
+
+         sll     t4, t2, 7
+
+         srl     t4, 29
+
+         li       t6, 64
+
+         sllv   t4, t6, t4     /* I$ Sets per way */
+
+ 
+
+         sll     t5, t2, 13
+
+         srl     t5, 29                  /* I$ Assoc (-1) */
+
+         add  t5, 1
+
+         mul  t4, t4, t5     /* Total number of sets */
+
+ 
+
+         lui     t6, 0x8000         /* Get a KSeg0 address for cacheops */
+
+ 
+
+         /* Clear TagLo/TagHi registers */
+
+         mtc0          zero, $28, 0 # TagLo0
+
+         mtc0          zero, $28, 2 # TagLo1
+
+         mtc0          zero, $29 #TagHi
+
+ 
+
+         move         t7, t4 
+
+ 
+
+         /*  Index Store Tag Cache Op
+
+          *  Will invalidate the tag entry, clear the lock bit, 
+
+          *  and clear the LRF bit
+
+          */
+
+1:      cache        0x8, 0(t6)
+
+         add  t7, -1                   /* Decrement set counter */
+
+         bne  t7, zero, 1b
+
+         add  t6, t3 /* Get next line address */
+
+ 
+
+10:    
+
+ 
+
+ 
+
+         /*  Now invalidate the D$ */
+
+ 
+
+         /* Isolate D$ Line Size */
+
+         sll     t3, t2, 19
+
+         srl     t3, 29
+
+ 
+
+         /* Skip ahead if No D$ */
+
+         beq  t3, zero, 10f
+
+         nop
+
+ 
+
+         li       t6, 2
+
+         sllv   t3, t6, t3     /* Now have true D$ line size in bytes */
+
+ 
+
+         sll     t4, t2, 16
+
+         srl     t4, 29
+
+         li       t6, 64
+
+         sllv   t4, t6, t4     /* D$ Sets per way */
+
+ 
+
+         sll     t5, t2, 22
+
+         srl     t5, 29                  /* D$ Assoc (-1) */
+
+         add  t5, 1
+
+ 
+
+         mul  t4, t4, t5     /* Get total number of sets */
+
+         
+
+         lui     t6, 0x8000         /* Get a KSeg0 address for cacheops */
+
+ 
+
+         /* Clear TagLo/TagHi registers */
+
+         mtc0          zero, $28, 0 # TagLo0
+
+         mtc0          zero, $28, 2 # TagLo1
+
+         mtc0          zero, $29 #TagHi
+
+ 
+
+         move         t7, t4 
+
+ 
+
+         /*  Index Store Tag Cache Op
+
+          *  Will invalidate the tag entry, clear the lock bit, 
+
+          *  and clear the LRF bit
+
+          */
+
+1:      cache        0x9, 0(t6)
+
+         add  t7, -1                   /* Decrement set counter */
+
+ 
+
+         bne  t7, zero, 1b
+
+         add  t6, t3 /* Get next line address */
+
+ 
+
+10:    
+
+                   
+
+//-------------------------------------------
+
+#endif
+
+#endif
+	/*设置cp0的debug寄存器，防止在单步调试的时候进入0x80000200的中断，bit25的含义可以查看MIPS资料：
+	Indicates the Count register behavior in debug mode.
+	0: Count register stopped in debug mode
+	1: Count register is running in debug mode
+	*/	
+	mfc0 t0, $23
+	and	t0, ~0x02000000
+	mtc0 t0, $23
+	
+	/*把C0_Cause寄存器的bit23和bit27置1*/
+	/*bit23置1，使用0x80000200地址的中断向量*/
+	/*bit27置1，禁止Count的计数*/
+	/*详见MIPS资料*/
+	li a0, M_CauseIV
+	li t2, M_CauseDC
+	or a0, t2
+	MTC0(a0, C0_Cause)      
+
+	/*把C0_Status寄存器的bit22、bit0、bit1、bit2清0,bit31~bit28置1*/
+	/*bit22清0，和C0_Cause的bit23置1一起，使用0x80000200地址的中断向量*/
+	/*bit0清0，IE清0，屏蔽中断*/
+	/*bit1清0，正常模式*/
+	/*bit2清0，正常模式*/
+	/*bit31~bit28置1，允许访问协处理器CP0*/
+	/*详见MIPS资料*/
+	MFC0(a0, C0_Status)
+	li t2, ~M_StatusBEV
+	and	a0, t2
+	li t2, ~7
+	and	a0, t2
+	ori	a0, 0xf0000000
+	li t2, M_StatusFR
+	or a0, t2
+	MTC0(a0, C0_Status)
+
+	/*C0_Count清0*/
+	MTC0(zero, C0_Count)
+	
+	/*C0_Compare赋成-1，即0xffffffff*/
+	li a0, -1
+	MTC0(a0, C0_Compare)
+
+	/*gp赋值为_gp，_gp是一个特殊标号，从map文件可以看出_gp =  .sdabase + 0x8000，用以定位其前后各32K的数据空间*/
+	la gp, _gp
+    la sp, __root_stack
+    addu sp, sp, 0x2000
+
+	/* 把小的无初值的全局变量清0 */
+    la t0, __ghs_sbssstart 	/* First address */
+    la t1, __ghs_sbssend 	/* Last  address */
+1:
+	sw zero, 0(t0)
+	addiu t0, 4
+	bltu t0, t1, 1b
+	nop
+	
+	/* 把大的无初值的全局变量清0 */
+    la t0, __ghs_bssstart 	/* First address */
+    la t1, __ghs_bssend 	/* Last  address */
+1:
+	sw zero, 0(t0)
+	addiu t0, 4
+	bltu t0, t1, 1b
+	nop	
+
+	/*用standalone_ram.ld中定义的符号来初始化全局变量*/	
+    la t0, __ghs_system_section_base
+    sw t0, SystemPartitionBaseAddress
+    la t1, __ghs_system_section_end
+    subu t2, t1, t0
+    sw t2, SystemPartitionTotalSize
+    la t0, __ghs_avmem_section_base
+    sw t0, AvMemPartitionBaseAddress
+    la t1, __ghs_avmem_section_end
+    subu t2, t1, t0
+    sw t2, AvMemPartitionTotalSize
+    
+	 /*跳转到main函数*/
+	la t9, main
+    jalr t9
+	nop
+
+	.set reorder
+	.end _start
+/* ********************************************************************* */
+

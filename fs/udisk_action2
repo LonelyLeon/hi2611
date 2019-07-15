@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ $ACTION = "add" ];then
+    if [ -e "/dev/shm/${MDEV}_mp" ];then
+        exit 0
+    fi
+    MOUNT_OPT="-o noatime,nodiratime,norelatime"
+    mkdir -p /dev/shm/${MDEV}_mp
+    mount -a $MOUNT_OPT /dev/$MDEV /dev/shm/${MDEV}_mp
+    if [ $? -ne 0 ];then
+        sleep 1
+        mount -a $MOUNT_OPT /dev/$MDEV /dev/shm/${MDEV}_mp
+        if [ $? -ne 0 ];then
+            sleep 1
+            mount -a $MOUNT_OPT /dev/$MDEV /dev/shm/${MDEV}_mp
+            if [ $? -ne 0 ];then
+                rm -rf /dev/shm/${MDEV}_mp
+                exit 1
+            fi
+        fi
+    fi
+    ln -s /dev/shm/${MDEV}_mp /tmp/$MDEV
+    dbus_sender add /tmp/$MDEV
+else
+    umount -l /tmp/${MDEV}*
+    dbus_sender remove /tmp/${MDEV}
+    rm -rf /tmp/${MDEV}*
+    rm -rf /dev/shm/${MDEV}*
+fi

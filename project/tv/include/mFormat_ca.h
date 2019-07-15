@@ -1,0 +1,31 @@
+/*DO NOT modify this file*/
+#ifndef	__HEADER_FOR_FORMAT__AND__ITS_PREDEFINED_ENUM_CONSTANT__
+#define	__HEADER_FOR_FORMAT__AND__ITS_PREDEFINED_ENUM_CONSTANT__
+
+
+#include	"dFrame.h"
+// global FORMATs used by entire project
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h00_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h05_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h10_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h15_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h20_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h10_v10_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h15_v15_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h00_v00_single_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h05_v00_single_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h10_v00_single_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h20_v00_single_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_single_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_single_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_multi_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_multi_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h_v_multi_whilte;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_top_h00_v00_multi_white;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_top_h00_v00_multi_black;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_single_white_R2L_SRCOLL;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_center_middle_h00_v00_single_black_R2L_SRCOLL;
+extern PREFIXCONST D_Format POSTCONST ca_fmt_left_middle_h_v_multi_black;
+
+
+#endif//__HEADER_FOR_FORMAT__AND__ITS_PREDEFINED_ENUM_CONSTANT__

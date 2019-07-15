@@ -1,0 +1,28 @@
+#!/bin/sh
+
+mount /proc
+mount -o remount,rw /
+mount /sys
+mkdir -p /dev/pts
+mkdir -p /dev/shm
+mount -a
+
+mkdir -p /var/run
+touch /var/run/resolv.conf
+mkdir -p /var/lock
+/bin/echo /sbin/mdev > /proc/sys/kernel/hotplug
+/sbin/mdev -s &
+
+/usr/sbin/telnetd -l /bin/sh
+
+if [ -e "/usr/bin/dbus-daemon" ]; then
+    echo "Open dbus!!"
+    mkdir -p /var/run/dbus
+    /usr/bin/dbus-daemon --config-file=/etc/dbus-system.conf
+fi
+
+ifconfig lo up
+
+cd /root/dvb
+./starter.sh
+

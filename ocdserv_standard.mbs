@@ -1,0 +1,8 @@
+// MULTI Server Script
+// This is an example Setup Script which sets up Malta boards for
+// running programs.  
+
+target rst
+target run
+target sleep 3
+target halt

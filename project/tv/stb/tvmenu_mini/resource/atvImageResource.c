@@ -1,0 +1,515 @@
+
+
+#include    "dTypes.h"
+#include    "atvImageResource.h"
+#include    "ImageOutput/atv_IMG_ID_Clock_english.c"
+#include    "ImageOutput/atv_IMG_ID_Mute_Icon_english.c"
+#include    "ImageOutput/atv_IMG_ID_Scroll_Vernier_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_menu_funtion_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_menu_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_menu_time_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_menu_turn_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_menu_voice_english.c"
+#include    "ImageOutput/atv_IMG_ID_meida_main_muise_english.c"
+#include    "ImageOutput/atv_IMG_ID_sub_menu_direc_left_english.c"
+#include    "ImageOutput/atv_IMG_ID_sub_menu_direc_right_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_folder_file_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_folder_file_focse_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_main_movie_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_main_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_main_prv_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_main_set_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_pic_focse_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_video_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_video_focse_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_muise_play_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_muise_play_focse_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_movie_pause_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_movie_play_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_movie_stop_english.c"
+#include    "ImageOutput/atv_IMG_ID_atv_IMG_ID_BUTTON_Blue_english.c"
+#include    "ImageOutput/atv_IMG_ID_atv_IMG_ID_BUTTON_Green_english.c"
+#include    "ImageOutput/atv_IMG_ID_atv_IMG_ID_BUTTON_Red_english.c"
+#include    "ImageOutput/atv_IMG_ID_atv_IMG_ID_BUTTON_Yellow_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_pic_last_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_pic_next_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_loading_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_rotate_l_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_rotate_r_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Eight_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Five_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Four_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Nine_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_One_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Seven_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Six_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Three_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Two_english.c"
+#include    "ImageOutput/atv_IMG_ID_Num_Zero_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_pause_english.c"
+#include    "ImageOutput/atv_IMG_ID_media_play_english.c"
+#include    "ImageOutput/atv_IMG_ID_pos_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_left_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_middle_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_right_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_focus_left_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_focus_middle_english.c"
+#include    "ImageOutput/atv_IMG_ID_music_select_focus_right_english.c"
+#include    "ImageOutput/atv_IMG_ID_focus_background_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_left_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_normal_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_right_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_left_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_normal_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_menu_button_right_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_left_arrow_no_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_right_arrow_no_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_left_arrow_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_right_arrow_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_left_no_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_normal_no_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_right_no_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_left_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_normal_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_right_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_left_enable_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_normal_enable_english.c"
+#include    "ImageOutput/atv_IMG_ID_scroll_right_enable_english.c"
+/*tvmenu暂不用部分*/
+#include    "ImageOutput/atv_IMG_ID_position_up_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_up_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_left_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_left_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_right_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_right_focus_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_down_english.c"
+#include    "ImageOutput/atv_IMG_ID_position_down_focus_english.c"
+/*end*/
+
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_dlna_flag_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_mira_flag_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_phone_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_tv_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_tvweb_flag_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_wifi_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_HDMI_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_bg_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_1_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_2_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_3_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_4_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_5_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_6_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_7_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_focse_8_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_souce_tv_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_source_av_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_source_dtv_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_source_media_english.c"
+#include    "ImageOutput/atv_IMG_ID_main_zhilian_source_ypbpr_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_dlna_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_iptv_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_media_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_mira_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_setting_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_source_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_zhilian_main_tsnet_pic_english.c"
+#include    "ImageOutput/atv_IMG_ID_Red_english.c"
+#include    "ImageOutput/atv_IMG_ID_hint_button_english.c"
+#include    "ImageOutput/atv_IMG_ID_red_info_icon_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_ld_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_lm_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_lu_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_md_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_middle_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_mu_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_rd_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_rm_english.c"
+#include    "ImageOutput/atv_IMG_ID_white_background_ru_english.c"
+#include    "ImageOutput/atv_IMG_ID_Green_english.c"
+#include    "ImageOutput/atv_IMG_ID_Blue_english.c"
+#include    "ImageOutput/atv_IMG_ID_scrool_one_english.c"
+#include    "ImageOutput/atv_IMG_ID_WIFI_CONNECT_english.c"
+#include    "ImageOutput/atv_IMG_ID_WIFI_LOCK_english.c"
+#include    "ImageOutput/atv_IMG_ID_WIFI_NOTICE_english.c"
+#include    "ImageOutput/atv_IMG_ID_info_english.c"
+#include    "ImageOutput/atv_IMG_ID_hint_direction_english.c"
+
+#include	"ImageOutput/atv_IMG_ID_mini_background_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_dlna_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_exit_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_iptv_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_ok_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_phone_throw_screen_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_select_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_set_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_source_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_usb_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_wifi_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_screen_icon_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_ebk_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_ebook_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_txt_english.c"
+#include	"ImageOutput/atv_IMG_ID_v_roll_english.c"
+#include	"ImageOutput/atv_IMG_ID_search_right_english.c"
+#include	"ImageOutput/atv_IMG_ID_search_left_english.c"
+#include	"ImageOutput/atv_IMG_ID_Scroll_Bg_english.c"
+#include	"ImageOutput/atv_IMG_ID_mini_airplay_english.c"
+#include	"ImageOutput/atv_IMG_ID_music_icon_english.c"
+
+#include	"ImageOutput/atv_IMG_ID_WIFI_1_english.c"
+#include	"ImageOutput/atv_IMG_ID_WIFI_2_english.c"
+#include	"ImageOutput/atv_IMG_ID_WIFI_3_english.c"
+#include	"ImageOutput/atv_IMG_ID_WIFI_4_english.c"
+#include	"ImageOutput/atv_IMG_ID_WIFI_bg_english.c"
+#include	"ImageOutput/atv_IMG_ID_main_zhilian_pic_eng_english.c"
+typedef struct
+{
+    unsigned char *imgName;
+    int imgSize;
+} IMGITEM;
+
+static PREFIXCONST IMGITEM POSTCONST _img_array__english[] =
+{
+    {atv_IMG_ID_Clock_english, 2070},
+    {atv_IMG_ID_Scroll_Vernier_english, 222},
+    {atv_IMG_ID_Mute_Icon_english, 3514},
+    {atv_IMG_ID_Num_Zero_english, 147},
+    {atv_IMG_ID_Num_One_english, 122},
+    {atv_IMG_ID_Num_Two_english, 126},
+    {atv_IMG_ID_Num_Three_english, 132},
+    {atv_IMG_ID_Num_Four_english, 132},
+    {atv_IMG_ID_Num_Five_english, 132},
+    {atv_IMG_ID_Num_Six_english, 140},
+    {atv_IMG_ID_Num_Seven_english, 118},
+    {atv_IMG_ID_Num_Eight_english, 138},
+    {atv_IMG_ID_Num_Nine_english, 137},
+    {atv_IMG_ID_main_menu_funtion_english, 1096},
+    {atv_IMG_ID_main_menu_pic_english, 612},
+    {atv_IMG_ID_main_menu_time_english, 719},
+    {atv_IMG_ID_main_menu_turn_english, 197},
+    {atv_IMG_ID_main_menu_voice_english, 779},
+    {atv_IMG_ID_sub_menu_direc_left_english, 87},
+    {atv_IMG_ID_sub_menu_direc_right_english, 88},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Blue_english, 617},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Green_english, 619},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Red_english, 614},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Yellow_english, 619},
+    {atv_IMG_ID_media_folder_file_english, 173},
+    {atv_IMG_ID_media_main_movie_english, 212},
+    {atv_IMG_ID_media_main_pic_english, 196},
+    {atv_IMG_ID_media_main_prv_english, 194},
+    {atv_IMG_ID_media_main_set_english, 204},
+    {atv_IMG_ID_media_muise_play_english, 208},
+    {atv_IMG_ID_media_muise_play_focse_english, 208},
+    {atv_IMG_ID_media_video_english, 166},
+    {atv_IMG_ID_media_video_focse_english, 166},
+    {atv_IMG_ID_meida_main_muise_english, 245},
+    {atv_IMG_ID_media_folder_file_focse_english, 173},
+    {atv_IMG_ID_media_movie_pause_english, 323},
+    {atv_IMG_ID_media_movie_play_english, 322},
+    {atv_IMG_ID_media_movie_stop_english, 285},
+    {atv_IMG_ID_media_pic_english, 174},
+    {atv_IMG_ID_media_pic_focse_english, 174},
+    {atv_IMG_ID_media_loading_english, 4847},
+    {atv_IMG_ID_media_pic_last_english, 522},
+    {atv_IMG_ID_media_pic_next_english, 528},
+    {atv_IMG_ID_media_rotate_l_english, 471},
+    {atv_IMG_ID_media_rotate_r_english, 470},
+    {atv_IMG_ID_media_pause_english, 504},
+    {atv_IMG_ID_media_play_english, 932},
+    {atv_IMG_ID_pos_english, 162},
+    {atv_IMG_ID_music_select_left_english, 415},
+    {atv_IMG_ID_music_select_middle_english, 133},
+    {atv_IMG_ID_music_select_right_english, 428},
+    {atv_IMG_ID_music_select_focus_left_english, 417},
+    {atv_IMG_ID_music_select_focus_middle_english, 131},
+    {atv_IMG_ID_music_select_focus_right_english, 428},
+    {atv_IMG_ID_focus_background_english, 3133},
+    {atv_IMG_ID_menu_button_left_english, 190},
+    {atv_IMG_ID_menu_button_normal_english, 128},
+    {atv_IMG_ID_menu_button_right_english, 178},
+    {atv_IMG_ID_menu_button_left_focus_english, 225},
+    {atv_IMG_ID_menu_button_normal_focus_english, 166},
+    {atv_IMG_ID_menu_button_right_focus_english, 218},
+    {atv_IMG_ID_left_arrow_no_focus_english, 660},
+    {atv_IMG_ID_right_arrow_no_focus_english, 655},
+    {atv_IMG_ID_left_arrow_focus_english, 831},
+    {atv_IMG_ID_right_arrow_focus_english, 782},
+    {atv_IMG_ID_scroll_left_no_focus_english, 332},
+    {atv_IMG_ID_scroll_normal_no_focus_english, 128},
+    {atv_IMG_ID_scroll_right_no_focus_english, 329},
+    {atv_IMG_ID_scroll_left_focus_english, 398},
+    {atv_IMG_ID_scroll_normal_focus_english, 166},
+    {atv_IMG_ID_scroll_right_focus_english, 404},
+    {atv_IMG_ID_scroll_left_enable_english, 366},
+    {atv_IMG_ID_scroll_normal_enable_english, 140},
+    {atv_IMG_ID_scroll_right_enable_english, 364},
+    {atv_IMG_ID_position_up_english, 502},
+    {atv_IMG_ID_position_up_focus_english, 510},
+    {atv_IMG_ID_position_left_english, 681},
+    {atv_IMG_ID_position_left_focus_english, 675},
+    {atv_IMG_ID_position_right_english, 677},
+    {atv_IMG_ID_position_right_focus_english, 702},
+    {atv_IMG_ID_position_down_english, 576},
+    {atv_IMG_ID_position_down_focus_english, 571},
+
+    {atv_IMG_ID_zhilian_main_dlna_flag_english, sizeof(atv_IMG_ID_zhilian_main_dlna_flag_english)},
+    {atv_IMG_ID_zhilian_main_mira_flag_english, sizeof(atv_IMG_ID_zhilian_main_mira_flag_english)},
+    {atv_IMG_ID_zhilian_main_tvweb_flag_english, sizeof(atv_IMG_ID_zhilian_main_tvweb_flag_english)},
+    {atv_IMG_ID_zhilian_main_phone_pic_english, sizeof(atv_IMG_ID_zhilian_main_phone_pic_english)},
+    {atv_IMG_ID_zhilian_main_tv_pic_english, sizeof(atv_IMG_ID_zhilian_main_tv_pic_english)},
+    {atv_IMG_ID_zhilian_main_wifi_pic_english, sizeof(atv_IMG_ID_zhilian_main_wifi_pic_english)},
+    {atv_IMG_ID_main_zhilian_bg_english, sizeof(atv_IMG_ID_main_zhilian_bg_english)},
+    {atv_IMG_ID_main_zhilian_focse_1_english, sizeof(atv_IMG_ID_main_zhilian_focse_1_english)},
+    {atv_IMG_ID_main_zhilian_focse_2_english, sizeof(atv_IMG_ID_main_zhilian_focse_2_english)},
+    {atv_IMG_ID_main_zhilian_focse_3_english, sizeof(atv_IMG_ID_main_zhilian_focse_3_english)},
+    {atv_IMG_ID_main_zhilian_focse_4_english, sizeof(atv_IMG_ID_main_zhilian_focse_4_english)},
+    {atv_IMG_ID_main_zhilian_focse_5_english, sizeof(atv_IMG_ID_main_zhilian_focse_5_english)},
+    {atv_IMG_ID_main_zhilian_focse_6_english, sizeof(atv_IMG_ID_main_zhilian_focse_6_english)},
+    {atv_IMG_ID_main_zhilian_focse_7_english, sizeof(atv_IMG_ID_main_zhilian_focse_7_english)},
+    {atv_IMG_ID_main_zhilian_focse_8_english, sizeof(atv_IMG_ID_main_zhilian_focse_8_english)},
+    {atv_IMG_ID_main_zhilian_HDMI_english, sizeof(atv_IMG_ID_main_zhilian_HDMI_english)},
+    {atv_IMG_ID_main_zhilian_pic_eng_english, sizeof(atv_IMG_ID_main_zhilian_pic_eng_english)},
+    {atv_IMG_ID_main_zhilian_souce_tv_english, sizeof(atv_IMG_ID_main_zhilian_souce_tv_english)},
+    {atv_IMG_ID_main_zhilian_source_av_english, sizeof(atv_IMG_ID_main_zhilian_source_av_english)},
+    {atv_IMG_ID_main_zhilian_source_dtv_english, sizeof(atv_IMG_ID_main_zhilian_source_dtv_english)},
+    {atv_IMG_ID_main_zhilian_source_media_english, sizeof(atv_IMG_ID_main_zhilian_source_media_english)},
+    {atv_IMG_ID_main_zhilian_source_ypbpr_english, sizeof(atv_IMG_ID_main_zhilian_source_ypbpr_english)},
+    {atv_IMG_ID_zhilian_main_dlna_pic_english, sizeof(atv_IMG_ID_zhilian_main_dlna_pic_english)},
+    {atv_IMG_ID_zhilian_main_iptv_pic_english, sizeof(atv_IMG_ID_zhilian_main_iptv_pic_english)},
+    {atv_IMG_ID_zhilian_main_media_pic_english, sizeof(atv_IMG_ID_zhilian_main_media_pic_english)},
+    {atv_IMG_ID_zhilian_main_mira_pic_english, sizeof(atv_IMG_ID_zhilian_main_mira_pic_english)},
+    {atv_IMG_ID_zhilian_main_setting_pic_english, sizeof(atv_IMG_ID_zhilian_main_setting_pic_english)},
+    {atv_IMG_ID_zhilian_main_source_pic_english, sizeof(atv_IMG_ID_zhilian_main_source_pic_english)},
+    {atv_IMG_ID_zhilian_main_tsnet_pic_english, sizeof(atv_IMG_ID_zhilian_main_tsnet_pic_english)},
+    {atv_IMG_ID_Red_english, 1147},
+    {atv_IMG_ID_hint_button_english, sizeof(atv_IMG_ID_hint_button_english)},
+    {atv_IMG_ID_red_info_icon_english, 420},
+    {atv_IMG_ID_white_background_ld_english, 153},
+    {atv_IMG_ID_white_background_lm_english, 144},
+    {atv_IMG_ID_white_background_lu_english, 147},
+    {atv_IMG_ID_white_background_md_english, 145},
+    {atv_IMG_ID_white_background_middle_english, 136},
+    {atv_IMG_ID_white_background_mu_english, 144},
+    {atv_IMG_ID_white_background_rd_english, 149},
+    {atv_IMG_ID_white_background_rm_english, 144},
+    {atv_IMG_ID_white_background_ru_english, 150},
+    {atv_IMG_ID_Green_english, 1156},
+    {atv_IMG_ID_Blue_english, 1151},
+    {atv_IMG_ID_scrool_one_english, 115},
+    {atv_IMG_ID_WIFI_CONNECT_english, sizeof(atv_IMG_ID_WIFI_CONNECT_english)},
+    {atv_IMG_ID_WIFI_LOCK_english, sizeof(atv_IMG_ID_WIFI_LOCK_english)},
+    {atv_IMG_ID_WIFI_NOTICE_english, sizeof(atv_IMG_ID_WIFI_NOTICE_english)},
+    {atv_IMG_ID_info_english, sizeof(atv_IMG_ID_info_english)},
+    {atv_IMG_ID_hint_direction_english, 3222},
+	{atv_IMG_ID_mini_background_english, 76608},
+	{atv_IMG_ID_mini_dlna_english, 5971},
+	{atv_IMG_ID_mini_exit_english, 1743},
+	{atv_IMG_ID_mini_iptv_english, 6186},
+	{atv_IMG_ID_mini_ok_english, 1692},
+	{atv_IMG_ID_mini_phone_throw_screen_english, 4898},
+	{atv_IMG_ID_mini_select_english, 1849},
+	{atv_IMG_ID_mini_set_english, 10652},
+	{atv_IMG_ID_mini_source_english, 6512},
+	{atv_IMG_ID_mini_usb_english, 180},
+	{atv_IMG_ID_mini_wifi_english, 483},
+	{atv_IMG_ID_mini_screen_icon_english, 24196},
+	{atv_IMG_ID_mini_ebk_english, 187},
+	{atv_IMG_ID_mini_ebook_english, 232},
+	{atv_IMG_ID_mini_txt_english, 184},
+	{atv_IMG_ID_v_roll_english, 82},
+	{atv_IMG_ID_search_right_english, 182},
+	{atv_IMG_ID_search_left_english, 193},
+	{atv_IMG_ID_Scroll_Bg_english, 199},
+	{atv_IMG_ID_mini_airplay_english, sizeof(atv_IMG_ID_mini_airplay_english)},
+        {atv_IMG_ID_music_icon_english, sizeof(atv_IMG_ID_music_icon_english)},
+                {atv_IMG_ID_WIFI_1_english, sizeof(atv_IMG_ID_WIFI_1_english)},
+	{atv_IMG_ID_WIFI_2_english, sizeof(atv_IMG_ID_WIFI_2_english)},
+	{atv_IMG_ID_WIFI_3_english, sizeof(atv_IMG_ID_WIFI_3_english)},
+	{atv_IMG_ID_WIFI_4_english, sizeof(atv_IMG_ID_WIFI_4_english)},
+	{atv_IMG_ID_WIFI_bg_english, sizeof(atv_IMG_ID_WIFI_bg_english)},
+};
+
+static PREFIXCONST IMGITEM POSTCONST _img_array__chinese[] =
+{
+    {atv_IMG_ID_Clock_english, 2070},
+    {atv_IMG_ID_Scroll_Vernier_english, 222},
+    {atv_IMG_ID_Mute_Icon_english, 3514},
+    {atv_IMG_ID_Num_Zero_english, 147},
+    {atv_IMG_ID_Num_One_english, 122},
+    {atv_IMG_ID_Num_Two_english, 126},
+    {atv_IMG_ID_Num_Three_english, 132},
+    {atv_IMG_ID_Num_Four_english, 132},
+    {atv_IMG_ID_Num_Five_english, 132},
+    {atv_IMG_ID_Num_Six_english, 140},
+    {atv_IMG_ID_Num_Seven_english, 118},
+    {atv_IMG_ID_Num_Eight_english, 138},
+    {atv_IMG_ID_Num_Nine_english, 137},
+    {atv_IMG_ID_main_menu_funtion_english, 1096},
+    {atv_IMG_ID_main_menu_pic_english, 612},
+    {atv_IMG_ID_main_menu_time_english, 719},
+    {atv_IMG_ID_main_menu_turn_english, 197},
+    {atv_IMG_ID_main_menu_voice_english, 779},
+    {atv_IMG_ID_sub_menu_direc_left_english, 87},
+    {atv_IMG_ID_sub_menu_direc_right_english, 88},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Blue_english, 617},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Green_english, 619},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Red_english, 614},
+    {atv_IMG_ID_atv_IMG_ID_BUTTON_Yellow_english, 619},
+    {atv_IMG_ID_media_folder_file_english, 173},
+    {atv_IMG_ID_media_main_movie_english, 212},
+    {atv_IMG_ID_media_main_pic_english, 196},
+    {atv_IMG_ID_media_main_prv_english, 194},
+    {atv_IMG_ID_media_main_set_english, 204},
+    {atv_IMG_ID_media_muise_play_english, 208},
+    {atv_IMG_ID_media_muise_play_focse_english, 208},
+    {atv_IMG_ID_media_video_english, 166},
+    {atv_IMG_ID_media_video_focse_english, 166},
+    {atv_IMG_ID_meida_main_muise_english, 245},
+    {atv_IMG_ID_media_folder_file_focse_english, 173},
+    {atv_IMG_ID_media_movie_pause_english, 323},
+    {atv_IMG_ID_media_movie_play_english, 322},
+    {atv_IMG_ID_media_movie_stop_english, 285},
+    {atv_IMG_ID_media_pic_english, 174},
+    {atv_IMG_ID_media_pic_focse_english, 174},
+    {atv_IMG_ID_media_loading_english, 4847},
+    {atv_IMG_ID_media_pic_last_english, 522},
+    {atv_IMG_ID_media_pic_next_english, 528},
+    {atv_IMG_ID_media_rotate_l_english, 471},
+    {atv_IMG_ID_media_rotate_r_english, 470},
+    {atv_IMG_ID_media_pause_english, 504},
+    {atv_IMG_ID_media_play_english, 932},
+    {atv_IMG_ID_pos_english, 162},
+    {atv_IMG_ID_music_select_left_english, 415},
+    {atv_IMG_ID_music_select_middle_english, 133},
+    {atv_IMG_ID_music_select_right_english, 428},
+    {atv_IMG_ID_music_select_focus_left_english, 417},
+    {atv_IMG_ID_music_select_focus_middle_english, 131},
+    {atv_IMG_ID_music_select_focus_right_english, 428},
+    {atv_IMG_ID_focus_background_english, 3133},
+    {atv_IMG_ID_menu_button_left_english, 190},
+    {atv_IMG_ID_menu_button_normal_english, 128},
+    {atv_IMG_ID_menu_button_right_english, 178},
+    {atv_IMG_ID_menu_button_left_focus_english, 225},
+    {atv_IMG_ID_menu_button_normal_focus_english, 166},
+    {atv_IMG_ID_menu_button_right_focus_english, 218},
+    {atv_IMG_ID_left_arrow_no_focus_english, 660},
+    {atv_IMG_ID_right_arrow_no_focus_english, 655},
+    {atv_IMG_ID_left_arrow_focus_english, 831},
+    {atv_IMG_ID_right_arrow_focus_english, 782},
+    {atv_IMG_ID_scroll_left_no_focus_english, 332},
+    {atv_IMG_ID_scroll_normal_no_focus_english, 128},
+    {atv_IMG_ID_scroll_right_no_focus_english, 329},
+    {atv_IMG_ID_scroll_left_focus_english, 398},
+    {atv_IMG_ID_scroll_normal_focus_english, 166},
+    {atv_IMG_ID_scroll_right_focus_english, 404},
+    {atv_IMG_ID_scroll_left_enable_english, 366},
+    {atv_IMG_ID_scroll_normal_enable_english, 140},
+    {atv_IMG_ID_scroll_right_enable_english, 364},
+    {atv_IMG_ID_position_up_english, 502},
+    {atv_IMG_ID_position_up_focus_english, 510},
+    {atv_IMG_ID_position_left_english, 681},
+    {atv_IMG_ID_position_left_focus_english, 675},
+    {atv_IMG_ID_position_right_english, 677},
+    {atv_IMG_ID_position_right_focus_english, 702},
+    {atv_IMG_ID_position_down_english, 576},
+    {atv_IMG_ID_position_down_focus_english, 571},
+
+    {atv_IMG_ID_zhilian_main_dlna_flag_english, sizeof(atv_IMG_ID_zhilian_main_dlna_flag_english)},
+    {atv_IMG_ID_zhilian_main_mira_flag_english, sizeof(atv_IMG_ID_zhilian_main_mira_flag_english)},
+    {atv_IMG_ID_zhilian_main_tvweb_flag_english, sizeof(atv_IMG_ID_zhilian_main_tvweb_flag_english)},
+    {atv_IMG_ID_zhilian_main_phone_pic_english, sizeof(atv_IMG_ID_zhilian_main_phone_pic_english)},
+    {atv_IMG_ID_zhilian_main_tv_pic_english, sizeof(atv_IMG_ID_zhilian_main_tv_pic_english)},
+    {atv_IMG_ID_zhilian_main_wifi_pic_english, sizeof(atv_IMG_ID_zhilian_main_wifi_pic_english)},
+    {atv_IMG_ID_main_zhilian_bg_english, sizeof(atv_IMG_ID_main_zhilian_bg_english)},
+    {atv_IMG_ID_main_zhilian_focse_1_english, sizeof(atv_IMG_ID_main_zhilian_focse_1_english)},
+    {atv_IMG_ID_main_zhilian_focse_2_english, sizeof(atv_IMG_ID_main_zhilian_focse_2_english)},
+    {atv_IMG_ID_main_zhilian_focse_3_english, sizeof(atv_IMG_ID_main_zhilian_focse_3_english)},
+    {atv_IMG_ID_main_zhilian_focse_4_english, sizeof(atv_IMG_ID_main_zhilian_focse_4_english)},
+    {atv_IMG_ID_main_zhilian_focse_5_english, sizeof(atv_IMG_ID_main_zhilian_focse_5_english)},
+    {atv_IMG_ID_main_zhilian_focse_6_english, sizeof(atv_IMG_ID_main_zhilian_focse_6_english)},
+    {atv_IMG_ID_main_zhilian_focse_7_english, sizeof(atv_IMG_ID_main_zhilian_focse_7_english)},
+    {atv_IMG_ID_main_zhilian_focse_8_english, sizeof(atv_IMG_ID_main_zhilian_focse_8_english)},
+    {atv_IMG_ID_main_zhilian_HDMI_english, sizeof(atv_IMG_ID_main_zhilian_HDMI_english)},
+    {atv_IMG_ID_main_zhilian_pic_english, sizeof(atv_IMG_ID_main_zhilian_pic_english)},
+    {atv_IMG_ID_main_zhilian_souce_tv_english, sizeof(atv_IMG_ID_main_zhilian_souce_tv_english)},
+    {atv_IMG_ID_main_zhilian_source_av_english, sizeof(atv_IMG_ID_main_zhilian_source_av_english)},
+    {atv_IMG_ID_main_zhilian_source_dtv_english, sizeof(atv_IMG_ID_main_zhilian_source_dtv_english)},
+    {atv_IMG_ID_main_zhilian_source_media_english, sizeof(atv_IMG_ID_main_zhilian_source_media_english)},
+    {atv_IMG_ID_main_zhilian_source_ypbpr_english, sizeof(atv_IMG_ID_main_zhilian_source_ypbpr_english)},
+    {atv_IMG_ID_zhilian_main_dlna_pic_english, sizeof(atv_IMG_ID_zhilian_main_dlna_pic_english)},
+    {atv_IMG_ID_zhilian_main_iptv_pic_english, sizeof(atv_IMG_ID_zhilian_main_iptv_pic_english)},
+    {atv_IMG_ID_zhilian_main_media_pic_english, sizeof(atv_IMG_ID_zhilian_main_media_pic_english)},
+    {atv_IMG_ID_zhilian_main_mira_pic_english, sizeof(atv_IMG_ID_zhilian_main_mira_pic_english)},
+    {atv_IMG_ID_zhilian_main_setting_pic_english, sizeof(atv_IMG_ID_zhilian_main_setting_pic_english)},
+    {atv_IMG_ID_zhilian_main_source_pic_english, sizeof(atv_IMG_ID_zhilian_main_source_pic_english)},
+    {atv_IMG_ID_zhilian_main_tsnet_pic_english, sizeof(atv_IMG_ID_zhilian_main_tsnet_pic_english)},
+    {atv_IMG_ID_Red_english, 1147},
+    {atv_IMG_ID_hint_button_english, sizeof(atv_IMG_ID_hint_button_english)},
+    {atv_IMG_ID_red_info_icon_english, 420},
+    {atv_IMG_ID_white_background_ld_english, 153},
+    {atv_IMG_ID_white_background_lm_english, 144},
+    {atv_IMG_ID_white_background_lu_english, 147},
+    {atv_IMG_ID_white_background_md_english, 145},
+    {atv_IMG_ID_white_background_middle_english, 136},
+    {atv_IMG_ID_white_background_mu_english, 144},
+    {atv_IMG_ID_white_background_rd_english, 149},
+    {atv_IMG_ID_white_background_rm_english, 144},
+    {atv_IMG_ID_white_background_ru_english, 150},
+    {atv_IMG_ID_Green_english, 1156},
+    {atv_IMG_ID_Blue_english, 1151},
+    {atv_IMG_ID_scrool_one_english, 115},
+    {atv_IMG_ID_WIFI_CONNECT_english, sizeof(atv_IMG_ID_WIFI_CONNECT_english)},
+    {atv_IMG_ID_WIFI_LOCK_english, sizeof(atv_IMG_ID_WIFI_LOCK_english)},
+    {atv_IMG_ID_WIFI_NOTICE_english, sizeof(atv_IMG_ID_WIFI_NOTICE_english)},
+    {atv_IMG_ID_info_english, sizeof(atv_IMG_ID_info_english)},
+        {atv_IMG_ID_hint_direction_english, 3222},
+	{atv_IMG_ID_mini_background_english, 76608},
+	{atv_IMG_ID_mini_dlna_english, 5971},
+	{atv_IMG_ID_mini_exit_english, 1743},
+	{atv_IMG_ID_mini_iptv_english, 6186},
+	{atv_IMG_ID_mini_ok_english, 1692},
+	{atv_IMG_ID_mini_phone_throw_screen_english, 4898},
+	{atv_IMG_ID_mini_select_english, 1849},
+	{atv_IMG_ID_mini_set_english, 10652},
+	{atv_IMG_ID_mini_source_english, 6512},
+	{atv_IMG_ID_mini_usb_english, 180},
+	{atv_IMG_ID_mini_wifi_english, 483},
+	{atv_IMG_ID_mini_screen_icon_english, 24196},
+	{atv_IMG_ID_mini_ebk_english, 187},
+	{atv_IMG_ID_mini_ebook_english, 232},
+	{atv_IMG_ID_mini_txt_english, 184},
+	{atv_IMG_ID_v_roll_english, 82},
+	{atv_IMG_ID_search_right_english, 182},
+	{atv_IMG_ID_search_left_english, 193},
+	{atv_IMG_ID_Scroll_Bg_english, 199},
+	{atv_IMG_ID_mini_airplay_english, sizeof(atv_IMG_ID_mini_airplay_english)},
+        {atv_IMG_ID_music_icon_english, sizeof(atv_IMG_ID_music_icon_english)},
+                {atv_IMG_ID_WIFI_1_english, sizeof(atv_IMG_ID_WIFI_1_english)},
+	{atv_IMG_ID_WIFI_2_english, sizeof(atv_IMG_ID_WIFI_2_english)},
+	{atv_IMG_ID_WIFI_3_english, sizeof(atv_IMG_ID_WIFI_3_english)},
+	{atv_IMG_ID_WIFI_4_english, sizeof(atv_IMG_ID_WIFI_4_english)},
+	{atv_IMG_ID_WIFI_bg_english, sizeof(atv_IMG_ID_WIFI_bg_english)},
+};
+
+static PREFIXCONST IMGITEM POSTCONST * _img_array_entries[] =
+{
+    _img_array__english,
+    _img_array__chinese,
+};
+PREFIXCONST unsigned char *POSTCONST atv_LoadImageData(int ids, int lanid, int *size)
+{
+    if(ids >= atv_IMG_ID_ENUM_MAX || ids < atv_IMG_ID_START )
+    {
+        return NULL;
+    }
+    ids -= atv_IMG_ID_START;
+    if(size)
+    {
+        *size = _img_array_entries[lanid][ids].imgSize;
+    }
+    return _img_array_entries[lanid][ids].imgName;
+}

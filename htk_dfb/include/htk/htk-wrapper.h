@@ -1,0 +1,124 @@
+#ifndef __HTK_WRAPPER_H__
+#define __HTK_WRAPPER_H__
+
+#ifdef ENABLE_PLAT_PC
+#define FONT "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc"
+#else
+#define FONT "/usr/share/fonts/wqy-microhei.ttf"
+#endif
+
+#include <jpeg_hw/jpeg.h>
+
+#include "_helper.h"
+#include <hdk/types.h>
+#include <htk/types.h>
+
+#include <hdk/backend.h>
+#include <hdk/color.h>
+#include <hdk/console.h>
+#include <hdk/drawable.h>
+#include <hdk/key.h>
+#include <hdk/pixbuf.h>
+#include <hdk/rectangle.h>
+#include <hdk/region.h>
+#include <hdk/screen.h>
+#include <hdk/window.h>
+#include <hdk/memory-pool.h>
+
+#include <htk/adjustment.h>
+#include <htk/arrow.h>
+#include <htk/bin.h>
+#include <htk/box.h>
+#include <htk/builder.h>
+#include <htk/builtin-types.h>
+#include <htk/button.h>
+#include <htk/cell-info.h>
+#include <htk/cell-layout.h>
+#include <htk/cell-list.h>
+#include <htk/cell-renderer.h>
+#include <htk/cell-renderer-pixbuf.h>
+#include <htk/cell-renderer-text.h>
+#include <htk/cell-view.h>
+#include <htk/checkbutton.h>
+#include <htk/choicebutton.h>
+#include <htk/clist.h>
+#include <htk/combo-box.h>
+#include <htk/container.h>
+#include <htk/dialog.h>
+#include <htk/drawing-area.h>
+#include <htk/dynamic-icon-box.h>
+#include <htk/entry.h>
+#include <htk/filechooser.h>
+#include <htk/filechooserdialog.h>
+#include <htk/filechooserwidget.h>
+#include <htk/fixed.h>
+#include <htk/hbox.h>
+#include <htk/helperbar.h>
+#include <htk/helperbar-context.h>
+#include <htk/helperbar-slot.h>
+#include <htk/hpaned.h>
+#include <htk/hscale.h>
+#include <htk/hscrollbar.h>
+#include <htk/hseparator.h>
+#include <htk/icon-bar.h>
+#include <htk/icon-box.h>
+#include <htk/icon-factory.h>
+#include <htk/icon-set.h>
+#include <htk/icon-source.h>
+#include <htk/icon-view.h>
+#include <htk/im.h>
+#include <htk/im-context.h>
+#include <htk/image.h>
+#include <htk/item.h>
+#include <htk/label.h>
+#include <htk/list-store.h>
+#include <htk/main.h>
+#include <htk/menu-item.h>
+#include <htk/menu-shell.h>
+#include <htk/menu.h>
+#include <htk/misc.h>
+#include <htk/notebook.h>
+#include <htk/object.h>
+#include <htk/paned.h>
+#include <htk/progress.h>
+#include <htk/progressbar.h>
+#include <htk/radiobutton.h>
+#include <htk/range.h>
+#include <htk/scale.h>
+#include <htk/scrollbar.h>
+#include <htk/scrolled-window.h>
+//#include <htk/separator.h>
+#include <htk/snooper.h>
+#include <htk/spinner.h>
+#include <htk/stock.h>
+#include <htk/stock-item.h>
+#include <htk/style.h>
+#include <htk/style-default.h>
+#include <htk/style-desktop.h>
+#include <htk/style-htv.h>
+#include <htk/style-it-remote.h>
+#include <htk/style-iptv.h>
+#include <htk/style-skin.h>
+#include <htk/style-dvb.h>
+#include <htk/task.h>
+#include <htk/text-buffer.h>
+#include <htk/text-iter.h>
+#include <htk/text-view.h>
+#include <htk/togglebutton.h>
+#include <htk/tree-selection.h>
+#include <htk/tree-view.h>
+#include <htk/tree-view-column.h>
+#include <htk/tooltip.h>
+#include <htk/tree-model.h>
+#include <htk/vbox.h>
+#include <htk/viewport.h>
+#include <htk/vpaned.h>
+#include <htk/vscale.h>
+#include <htk/vscrollbar.h>
+#include <htk/vseparator.h>
+#include <htk/widget.h>
+#include <htk/window.h>
+#include <htk/word-box.h>
+#include <htk/xaml.h>
+
+#endif//__HTK_WRAPPER_H__
